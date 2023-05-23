@@ -1,0 +1,24 @@
+mes = 1
+data = []
+
+def isFloat(mesage):
+    while True:
+        try:
+            num = float(input(mesage))
+        except ValueError:
+            continue
+        else:
+            return num
+
+for i in range(12):
+  data.append(isFloat(f"Insira as toneladas colhidas por mes: {mes}"))
+  mes+=1
+
+for x in range(12):
+    manual = data[x] * 0.05
+    maquina = data[x] * 0.15
+    print(f"""
+    Mês: {x + 1}
+        Perda manual.......: {manual:.2f}
+        Perda com máquina..: {maquina:.2f}
+    """)23
