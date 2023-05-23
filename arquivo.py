@@ -11,8 +11,14 @@ tmaquina = 0
 colheita = 0
 
 while mes <= 12:
-    #tonelada = input("Mes "  " ....: ")
     tonelada = input()
+    
+    while not tonelada.isdigit():
+        print("A entrada deve ser um número em toneladas!")
+        print("Insira NOVAMENTE as toneladas colhidas por mês:")
+        print("")
+        tonelada = input()
+    
     print("Mês", mes, "....:",tonelada)
     manual = int(tonelada) * 0.05
     maquina = int(tonelada) * 0.15
@@ -28,7 +34,6 @@ print("")
 print("RELATÓRIO CONSOLIDADO:")
 print("")
 print("")
-
 print(f'Colheita do ano.....: {colheita:,.2f} Toneladas')
 print("Projeção de desperdício:")
 print(f'  Manual..........: {tmanual:,.2f}')
